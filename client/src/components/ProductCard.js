@@ -10,7 +10,7 @@ function ProductCard(props) {
   // props.product is the product we are selling
   const product = props.product;
   const cart = useContext(CartContext);
-  const productQuantity = cart.getProductQuantity(product.id);
+  // const productQuantity = cart.getProductQuantity(product.id);
   console.log(cart.items);
   return (
     // <Card style={{height: '280px', width: '300px'}}>

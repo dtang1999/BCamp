@@ -1,18 +1,16 @@
 .pcard {
-  width: 46vw;
+  /* width: 45vw; */
   height: 210px;
   background: white;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
   border-radius: 7px;
   display: flex;
   flex-direction: column;
-  /* padding: 7px; */ /* You can uncomment this line if you want padding */
   align-items: center;
 }
 
 .bgImage {
-  width: 150px;
-  /* width: 40vw; */
+  width: 40vw;
   height: 140px;
   margin: 7px;
   border-radius: 7px;
