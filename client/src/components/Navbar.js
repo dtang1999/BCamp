@@ -32,7 +32,7 @@ function NavbarComponent() {
 
     return (
         <>
-            <Navbar style={{padding: "10px 20px 0px"}}>
+            <Navbar style={{padding: "10px 20px"}}>
                 <Navbar.Brand href="/">
                     <img style={{ width: '100px', height: '40px' }} src='./connectedLogo.png' alt='Connected Sports Logo'/>
                 </Navbar.Brand>

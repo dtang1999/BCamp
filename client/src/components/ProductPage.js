@@ -22,7 +22,7 @@ export default function ProductPage(props) {
   console.log(productQuantity);
 
   return (
-    <div>
+    <div className={styles.productPage}>
       <div
         className={styles.itemImage}
         style={{ background: `no-repeat center url(${productData.url})` }}
@@ -52,17 +52,21 @@ export default function ProductPage(props) {
 
         <div className={styles.details}>
           <h2>Time & Day</h2>
-          <p>{productData.time}</p>
-          <p>{productData.weekday}</p>
+          <div className={styles.timeDay}>
+            <p>{productData.time}</p>
+            <p>{productData.weekday}</p>
+          </div>
           <h2>Location</h2>
           <p>
-            26923 Fuerte Drive, Lake Forest, CA 92630 (inside Clava Sports
-            Facility)
+            26923 Fuerte Drive, Lake Forest, CA 92630 (inside Clava
+            SportsFacility)
           </p>
           <h2>Class Size</h2>
           <p>Min 6 / Max 12</p>
         </div>
+      </div>
 
+      <div className={styles.cartWrap}>
         <div className={styles.cartFunc}>
           <p>${productData.price}</p>
           {productQuantity > 0 ? (
