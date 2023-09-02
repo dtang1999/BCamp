@@ -14,12 +14,14 @@ const productsArray = [
     {
         id: "price_1Njyb6L3ULrcHZjSFsWX7g4F",
         title: "Course B",
-        price: 599
+        price: 599,
+        url: "./course2.jpg",
     },
     {
         id: "price_1NjybpL3ULrcHZjSUo9FyJgp",
         title: "Course C",
-        price: 699
+        price: 699,
+        url: "./course3.jpg",
     }
 ];
 

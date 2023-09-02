@@ -27,12 +27,22 @@ export default function ProductPage(props) {
         className={styles.itemImage}
         style={{ background: `no-repeat center url(${productData.url})` }}
       >
-        <img
-          onClick={goBack}
-          className={styles.backArrow}
-          src="./backArrow.svg"
-          alt="Back Arrow Icon"
-        ></img>
+        <button className={styles.backArrow} onClick={goBack}>
+          {/* <img style={{fill: "grey"}} src="./backArrow.svg" alt="Back Arrow Icon"></img>
+           */}
+          <svg
+            width="29"
+            height="24"
+            viewBox="0 0 29 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M29 10.443H6.02867L14.3646 2.20163L12.1377 0L0 12L12.1377 24L14.3646 21.7984L6.02867 13.557H29V10.443Z"
+              fill="#737373"
+            />
+          </svg>
+        </button>
       </div>
 
       <div className={styles.infoSection}>
