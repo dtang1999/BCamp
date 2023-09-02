@@ -32,7 +32,7 @@ export function CartProvider({children}) {
         if (quantity === 0) { // product is not in cart
             setCartProducts(
                 [
-                    ...cartProducts,
+                    ...cartProducts, // "..." is work like making copy of the element
                     {
                         id: id,
                         quantity: 1

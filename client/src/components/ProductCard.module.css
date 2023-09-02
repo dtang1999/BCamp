@@ -1,0 +1,48 @@
+.pcard {
+  width: 46vw;
+  height: 210px;
+  background: white;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  /* padding: 7px; */ /* You can uncomment this line if you want padding */
+  align-items: center;
+}
+
+.bgImage {
+  width: 150px;
+  /* width: 40vw; */
+  height: 140px;
+  margin: 7px;
+  border-radius: 7px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.lower {
+  width: 140px;
+  height: 33px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.itemTitle {
+  color: #f9c108;
+  font-size: 15px;
+  font-family: "Poppins";
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.itemPrice {
+  color: #737373;
+  font-size: 12px;
+  font-family: "Poppins";
+  font-weight: 400;
+  word-wrap: break-word;
+}

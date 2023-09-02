@@ -1,0 +1,32 @@
+.stroke {
+    border: none;
+    border-top: 2px solid black;
+    /* margin-top: 0px; */
+    margin-bottom: 3px;
+}
+
+.title {
+    color: #737373;
+    font-size: 26px;
+    font-family: "Poppins";
+    font-weight: 700;
+    word-wrap: break-word;
+    margin-bottom: 10px;
+}
+
+.centerflex {
+    display: flex;
+    justify-content: center;
+}
+
+.itemContainer {
+    /* width: 330px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribute items evenly */
+}
+
+.itemCard {
+    /* width: calc(50% - 10px); */
+    margin-bottom: 10px; 
+}

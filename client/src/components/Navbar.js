@@ -1,4 +1,4 @@
-import {Button, Container, Navbar, Modal} from 'react-bootstrap';
+import {Button, Container, Navbar, Modal, Nav} from 'react-bootstrap';
 import { useState, useContext } from 'react';
 import { CartContext } from "../CartContext";
 import CartProduct from './CartProduct';
@@ -10,8 +10,10 @@ function NavbarComponent() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    // change fetch url to localhost:3000 for testing
+    // https://bcamp-e821b244874c.herokuapp.com/checkout
     const checkout = async () => {
-        await fetch('http://localhost:4000/checkout', {
+        await fetch('http://localhost:5000/checkout', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -30,13 +32,19 @@ function NavbarComponent() {
 
     return (
         <>
-            <Navbar expand="sm">
-                <Navbar.Brand href="/">Ecommerce Store</Navbar.Brand>
-                <Navbar.Toggle />
+            <Navbar style={{padding: "10px 20px 0px"}}>
+                <Navbar.Brand href="/">
+                    <img style={{ width: '100px', height: '40px' }} src='./connectedLogo.png' alt='Connected Sports Logo'/>
+                </Navbar.Brand>
+                {/* <Navbar.Toggle /> */}
                 <Navbar.Collapse className="justify-content-end">
-                    <Button onClick={handleShow}>Cart ({productsCount} Items)</Button>
+                    {/* <Button onClick={handleShow}>Cart ({productsCount} Items)</Button> */}
+                    <div onClick={handleShow} >
+                        <img src='./cartLogo.svg' alt='Shopping Cart Logo' style={{ width: '25px', height: '25px' }} />
+                    </div>
                 </Navbar.Collapse>
             </Navbar>
+            
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Shopping Cart</Modal.Title>
