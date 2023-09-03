@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { productsArray, getProductData } from "./productsStore";
 
 
@@ -11,10 +11,22 @@ export const CartContext = createContext({
     getTotalCost: () => {}
 });
 
+
+// check if anything stored in the local storage
+const getInitialState = () => {
+    const cartProducts = sessionStorage.getItem("cartProducts");
+    return cartProducts ? JSON.parse(cartProducts) : []
+}
+
 export function CartProvider({children}) {
-    const [cartProducts, setCartProducts] = useState([]);
+    const [cartProducts, setCartProducts] = useState(getInitialState);
     
     // [ { id: 1 , quantity: 3 }, { id: 2, quantity: 1 } ]
+
+    // local storage listener
+    useEffect(() => {
+        sessionStorage.setItem("cartProducts", JSON.stringify(cartProducts))
+    }, [cartProducts])
 
     function getProductQuantity(id) {
         const quantity = cartProducts.find(product => product.id === id)?.quantity;
@@ -39,6 +51,7 @@ export function CartProvider({children}) {
                     }
                 ]
             )
+
         } else { // product is in cart
             // [ { id: 1 , quantity: 3 }, { id: 2, quantity: 1 } ]    add to product id of 2
             setCartProducts(
