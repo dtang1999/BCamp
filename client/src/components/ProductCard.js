@@ -44,13 +44,13 @@ function ProductCard(props) {
           }}
         />
       </Link>
+      
+      {/* Rework on the style */}
       <div className={styles.lower}>
         <div className={styles.text}>
           <div className={styles.itemTitle}>{product.title}</div>
           <div className={styles.itemPrice}>${product.price}</div>
         </div>
-
-        {/* <div>hello</div> */}
       </div>
     </div>
   );

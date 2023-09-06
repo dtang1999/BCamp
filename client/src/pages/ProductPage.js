@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import styles from "./ProductPage.module.css";
 import { productsArray } from "../productsStore";
 import { CartContext } from "../CartContext";
@@ -28,8 +28,6 @@ export default function ProductPage(props) {
         style={{ background: `no-repeat center url(${productData.url})` }}
       >
         <button className={styles.backArrow} onClick={goBack}>
-          {/* <img style={{fill: "grey"}} src="./backArrow.svg" alt="Back Arrow Icon"></img>
-           */}
           <svg
             width="29"
             height="24"
@@ -46,9 +44,11 @@ export default function ProductPage(props) {
       </div>
 
       <div className={styles.infoSection}>
-        <h1>{productData.title}</h1>
-        <h2>{productData.title}</h2>
-        <hr />
+        <div className={styles.header}>
+          <h1>{productData.title}</h1>
+          <h2>{productData.title}</h2>
+          <hr />
+        </div>
 
         <div className={styles.details}>
           <h2>Time & Day</h2>
@@ -77,7 +77,7 @@ export default function ProductPage(props) {
               >
                 <img src="./minusIcon.svg" alt="Minus Icon" />
               </button>
-              <p style={{ color: "#f9c108" }}>{productQuantity}</p>
+              <p style={{ color: "#000" }}>{productQuantity}</p>
               <button
                 onClick={() => cart.addOneToCart(productData.id)}
                 className={styles.plus}

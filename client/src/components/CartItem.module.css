@@ -1,0 +1,89 @@
+.cart {
+  /* width: 90vw; */
+  height: 125px;
+  border-radius: 7px;
+  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  font-family: Poppins;
+  margin-bottom: 10px;
+}
+
+.thumb {
+  /* width: 90px; */
+  width: 25vw;
+  height: 110px;
+  margin: 7px;
+  border-radius: 7px;
+}
+
+.productInfo {
+  margin: 10px 10px;
+  width: 60vw;
+  /* height: 10vh; */
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.title {
+  color: #f9c108;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.content {
+  padding-bottom: 5px;
+  color: #737373;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.atcFunc {
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: #000;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.atcBtn {
+  width: 35vw;
+  display: flex;
+}
+
+.adjust {
+  width: 20vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.minus {
+  width: 70px;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.plus {
+  width: 70px;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.remove {
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

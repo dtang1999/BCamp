@@ -15,22 +15,34 @@
   padding: 10px 20px;
 }
 
-.infoSection h1 {
-  color: #737373;
+.header h1 {
+  color: #000;
   font-size: 26px;
   font-weight: 700;
 }
 
-.infoSection h2 {
+.header h2 {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.details h2 {
   color: #f9c108;
-  font-size: 15px;
+  font-size: 20px;
+  font-style: normal;
   font-weight: 700;
+  line-height: normal;
 }
 
 .infoSection p {
-  color: #737373;
-  font-size: 12px;
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
   font-weight: 400;
+  line-height: normal;
 }
 
 .timeDay {
@@ -43,7 +55,7 @@
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
-  margin: 0 20px
+  margin: 0 20px;
 }
 
 .cartFunc {
@@ -53,9 +65,8 @@
 }
 
 .cartFunc p {
-  color: #737373;
-  font-family: Poppins;
-  font-size: 19px;
+  color: #000;
+  font-size: 26px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -64,7 +75,6 @@
 .atcbtn {
   width: 233px;
   height: 47px;
-  flex-shrink: 0;
   border-radius: 24px;
   background: #f9c108;
   border-color: transparent;
