@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../CartContext";
 import CartItem from "../components/CartItem";
@@ -13,6 +13,14 @@ function ShoppingCart() {
     (sum, product) => sum + product.quantity,
     0
   );
+
+  const navigate = useNavigate();
+  const goBack = () => {
+    navigate(-1);
+  };
+
+  // change fetch url to localhost:5000 for testing
+  // https://bcamp-e821b244874c.herokuapp.com/checkout
 
   const checkout = async () => {
     await fetch("https://bcamp-e821b244874c.herokuapp.com/checkout", {
@@ -36,7 +44,14 @@ function ShoppingCart() {
     <div className={styles.cart}>
       <div className={styles.header}>
         <hr className={styles.stroke} />
-        <h1 className={styles.title}>Shopping Cart</h1>
+
+        <div className={styles.title}>
+          <button className={styles.backArrow} onClick={goBack}>
+            <img src="./backArrow.svg" alt="Back Arrow Button"></img>
+          </button>
+
+          <h1>Shopping Cart</h1>
+        </div>
       </div>
       {productsCount > 0 ? (
         <>

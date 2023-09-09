@@ -10,11 +10,21 @@
   margin-bottom: 3px;
 }
 
+.backArrow {
+  cursor: pointer;
+  border-color: transparent;
+  background: transparent;
+}
+
 .title {
+  display: flex;
+  align-items: flex-start;
+}
+
+.title h1{
   color: #737373;
   font-size: 26px;
   font-weight: 700;
-  word-wrap: break-word;
   margin-bottom: 10px;
 }
 

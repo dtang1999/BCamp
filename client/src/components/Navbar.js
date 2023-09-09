@@ -1,5 +1,5 @@
-import { Button, Navbar, Modal, Nav } from "react-bootstrap";
-import { useState, useContext } from "react";
+import { Navbar } from "react-bootstrap";
+import { useContext } from "react";
 import { CartContext } from "../CartContext";
 // import CartProduct from "./CartProduct";
 import { Link } from "react-router-dom";
@@ -10,26 +10,6 @@ function NavbarComponent() {
   // const [show, setShow] = useState(false);
   // const handleClose = () => setShow(false);
   // const handleShow = () => setShow(true);
-
-  // change fetch url to localhost:5000 for testing
-  // https://bcamp-e821b244874c.herokuapp.com/checkout
-  const checkout = async () => {
-    await fetch("https://bcamp-e821b244874c.herokuapp.com/checkout", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ items: cart.items }),
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((response) => {
-        if (response.url) {
-          window.location.assign(response.url); // Forwarding user to Stripe
-        }
-      });
-  };
 
   const productsCount = cart.items.reduce(
     (sum, product) => sum + product.quantity,

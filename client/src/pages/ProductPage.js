@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import styles from "./ProductPage.module.css";
 import { productsArray } from "../productsStore";
 import { CartContext } from "../CartContext";
@@ -28,18 +28,7 @@ export default function ProductPage(props) {
         style={{ background: `no-repeat center url(${productData.url})` }}
       >
         <button className={styles.backArrow} onClick={goBack}>
-          <svg
-            width="29"
-            height="24"
-            viewBox="0 0 29 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M29 10.443H6.02867L14.3646 2.20163L12.1377 0L0 12L12.1377 24L14.3646 21.7984L6.02867 13.557H29V10.443Z"
-              fill="#737373"
-            />
-          </svg>
+          <img src="./backArrow.svg" alt="Back Arrow Button"></img>
         </button>
       </div>
 
