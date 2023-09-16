@@ -7,6 +7,28 @@ import CartItem from "../components/CartItem";
 import styles from "./ShoppingCart.module.css";
 
 function ShoppingCart() {
+  // const [inputValue, setInputValue] = useState("");
+  // const [discount, setDiscount] = useState("");
+
+  // const handleInputChange = (e) => {
+  //   setInputValue(e.target.value);
+  // };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   console.log("Submitted value:", inputValue);
+
+  //   const promo = promoArray.find(
+  //     (item) => item.promo === inputValue.toLowerCase()
+  //   );
+  //   console.log(promo);
+  //   if (promo) {
+  //     setDiscount(promo.discount);
+  //   } else {
+  //     setDiscount(null);
+  //   }
+  // };
+
   const cart = useContext(CartContext);
   // console.log(cart)
   const productsCount = cart.items.reduce(
@@ -21,9 +43,8 @@ function ShoppingCart() {
 
   // change fetch url to localhost:5000 for testing
   // https://bcamp-e821b244874c.herokuapp.com/checkout
-
   const checkout = async () => {
-    await fetch("https://bcamp-e821b244874c.herokuapp.com/checkout", {
+    await fetch("http://localhost:5000/checkout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,6 +55,10 @@ function ShoppingCart() {
         return response.json();
       })
       .then((response) => {
+        if (response.id) {
+          cart.setId(response.id)
+          console.log(cart.checkoutId)
+        }
         if (response.url) {
           window.location.assign(response.url); // Forwarding user to Stripe
         }
@@ -65,16 +90,49 @@ function ShoppingCart() {
             ))}
           </div>
 
+          {/* <div className={styles.promoSection}>
+            <h2>Promo Code</h2>
+            <form>
+              <input
+                type="text"
+                placeholder=""
+                value={inputValue}
+                onChange={handleInputChange}
+                style={{ borderRadius: "5px", marginRight: "5px" }}
+              />
+              <button
+                type="submit"
+                disabled={inputValue === ""}
+                onClick={handleSubmit}
+              >
+                Apply
+              </button>
+            </form>
+            {discount && discount !== "" && (
+              <p className={styles.msg}>Promo Code Appied!</p>
+            )}
+            {!discount && discount !== "" && (
+              <p className={styles.alert}>Promo Code Not Found!</p>
+            )}
+          </div> */}
+
           <div className={styles.summary}>
             <h2>Order Summary</h2>
             <div className={styles.line}>
               <p>Subtotal</p>
               <p>${cart.getTotalCost().toFixed(2)}</p>
             </div>
-            {/* <div className={styles.line}>
-          <p>Discount</p>
-          <p>-$5</p>
-        </div> */}
+
+            {/* {discount && discount !== "" && (
+              <div className={styles.line}>
+                <p>Discount</p>
+                <p>
+                  <span>(-{discount * 100}%)</span> -$
+                  {cart.getTotalCost().toFixed(2)}
+                </p>
+              </div>
+            )} */}
+
             <hr className={styles.stroke} />
             <div className={styles.line}>
               <p>Total</p>

@@ -21,11 +21,57 @@
   align-items: flex-start;
 }
 
-.title h1{
+.title h1 {
   color: #737373;
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 10px;
+}
+
+.promoSection {
+  margin-bottom: 90px;
+}
+
+.promoSection h2 {
+  color: #000;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.promoSection input {
+  width: 50vw;
+}
+
+.promoSection button {
+  border: none;
+  border-radius: 14.5px;
+  background: #f9c108;
+  height: 30px;
+  width: 20vw;
+
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.promoSection .msg {
+  color: green;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.promoSection .alert {
+  color: #fe5a5a;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .summary {

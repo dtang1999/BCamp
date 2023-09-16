@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 import { productsArray } from "../productsStore";
 import ProductCard from "../components/ProductCard";
@@ -5,6 +6,9 @@ import ProductCard from "../components/ProductCard";
 import styles from "./Store.module.css";
 // [{... }, {... }, {... }]
 function Store() {
+  useEffect(() => {
+    document.title = "Home";
+  }, []);
   return (
     <div style={{marginLeft: "20px", marginRight: "20px"}}>
       <hr className={styles.stroke} />
